@@ -10,6 +10,7 @@ const Markers = ({ markers }) => {
       eventHandlers={{
         click(e) {
           const location = e.target.getLatLng();
+          console.log(location);
           map.flyToBounds([location]);
         },
       }}

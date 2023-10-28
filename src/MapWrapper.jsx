@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import Markers from "./Markers";
+import Sidebar from "./Sidebar";
 
 const MapWrapper = ({ center, points }) => {
   const [map, setMap] = useState(null);
@@ -17,6 +18,7 @@ const MapWrapper = ({ center, points }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
+      <Sidebar points={points} />
       <Markers markers={points} />
     </MapContainer>
   );

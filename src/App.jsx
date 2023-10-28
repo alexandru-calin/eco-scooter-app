@@ -28,7 +28,6 @@ const App = () => {
 
   return (
     <main>
-      <Sidebar points={points} />
       <MapWrapper center={center} points={points} />
     </main>
   );
