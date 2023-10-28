@@ -1,7 +1,21 @@
+import { MapContainer, TileLayer } from "react-leaflet";
+import Location from "./Location";
+
 const App = () => {
   return (
-    <div>
-      <h1>hello, world</h1>
-    </div>
+    <MapContainer
+      id="map"
+      center={[51.505, -0.09]}
+      zoom={13}
+      scrollWheelZoom={false}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Location />
+    </MapContainer>
   );
 };
+
+export default App;
