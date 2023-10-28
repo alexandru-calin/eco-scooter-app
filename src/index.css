@@ -63,13 +63,17 @@ main {
   font-size: 32px;
 }
 
-.side-bar > button {
+.side-bar > button,
+form > button {
   border: 1px solid rgb(2, 6, 23);
   background-color: inherit;
   padding: 10px;
+  margin-top: 10px;
+  width: 100%;
 }
 
-.side-bar > button:hover {
+.side-bar > button:hover,
+form > button:hover {
   background-color: rgb(2, 6, 23);
   color: #fff;
   cursor: pointer;
@@ -78,6 +82,7 @@ main {
 
 .side-bar p {
   font-size: 22px;
+  padding: 5px;
 }
 
 .side-bar p:nth-child(odd) {
@@ -86,4 +91,12 @@ main {
 
 header {
   padding: 10px;
+}
+
+form {
+  padding: 10px;
+}
+
+input {
+  width: 100%;
 }

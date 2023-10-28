@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useMap } from "react-leaflet";
+import Form from "./Form";
 
-const Sidebar = ({ points }) => {
+const Sidebar = ({ points, handleLocationAdd }) => {
   const map = useMap();
 
   const [selected, setSelected] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   const handleClickLocation = (e) => {
     const { key } = e.target.dataset;
@@ -15,6 +17,10 @@ const Sidebar = ({ points }) => {
 
   const handleClickBack = () => {
     setSelected(null);
+  };
+
+  const handleToggleForm = () => {
+    setShowForm(!showForm);
   };
 
   const locations = points.map(({ title }, i) => {
@@ -39,6 +45,14 @@ const Sidebar = ({ points }) => {
         <>
           <h2>Available locations</h2>
           <ul>{locations}</ul>
+          {showForm ? (
+            <Form
+              handleLocationAdd={handleLocationAdd}
+              handleToggleForm={handleToggleForm}
+            />
+          ) : (
+            <button onClick={handleToggleForm}>add location</button>
+          )}
         </>
       )}
     </div>

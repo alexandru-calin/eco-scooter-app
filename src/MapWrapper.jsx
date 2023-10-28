@@ -5,7 +5,7 @@ import Sidebar from "./Sidebar";
 
 const MapWrapper = ({ center }) => {
   const [map, setMap] = useState(null);
-  const [points, setPoints] = useState([
+  const [locations, setLocations] = useState([
     {
       lat: 45.74807260622888,
       lng: 21.23212516357711,
@@ -32,6 +32,11 @@ const MapWrapper = ({ center }) => {
     },
   ]);
 
+  const handleLocationAdd = (newLocation) => {
+    const updatedLocations = locations.concat(JSON.parse(newLocation));
+    setLocations(updatedLocations);
+  };
+
   return (
     <MapContainer
       id="map"
@@ -44,8 +49,8 @@ const MapWrapper = ({ center }) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Sidebar points={points} />
-      <Markers markers={points} />
+      <Sidebar points={locations} handleLocationAdd={handleLocationAdd} />
+      <Markers markers={locations} />
     </MapContainer>
   );
 };
