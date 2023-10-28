@@ -1,5 +1,24 @@
-#map {
-  height: 500px;
-  max-width: 800px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  display: flex;
+  gap: 20px;
   margin: 0 auto;
+  height: 100vh;
+}
+
+#map {
+  flex: 1;
 }

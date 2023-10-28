@@ -1,4 +1,5 @@
 import MapWrapper from "./MapWrapper";
+import Sidebar from "./Sidebar";
 
 const App = () => {
   const center = [45.760696, 21.226788];
@@ -25,7 +26,12 @@ const App = () => {
     },
   ];
 
-  return <MapWrapper center={center} points={points} />;
+  return (
+    <main>
+      <Sidebar points={points} />
+      <MapWrapper center={center} points={points} />
+    </main>
+  );
 };
 
 export default App;
