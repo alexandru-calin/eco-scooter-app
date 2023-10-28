@@ -8,4 +8,4 @@ Simple web page that lets you see available locations where you can rent electri
 
 [View demo](https://alexandru-calin.github.io/eco-scooter-app/)
 
-![Screenshot](public/assets/screenshot.png)
+![Screenshot](assets/screenshot.png)
